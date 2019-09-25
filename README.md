@@ -1,7 +1,7 @@
 # KampNUsersManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
-## install dependencies
+## Install dependencies
 
 Run `npm install` at the root of the project to install all the dependencies necessary for the proper functioning of the application
 
