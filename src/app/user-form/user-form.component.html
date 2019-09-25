@@ -1,0 +1,19 @@
+<h1 mat-dialog-title class="text-center">Add User</h1>
+<form class='row col-sm-9 card-body mx-auto' [formGroup]="form">
+  <div class="col-sm-12 ">
+    <label for="firstName">Firstname</label>
+    <input formControlName="firstName" type="text" class="form-control" id="firstName" name="firstName">
+  </div>
+  <div class="col-sm-12">
+    <label for="password">LastName</label>
+    <input formControlName="lastName" type="text" class="form-control" id="lastName" name="lastName">
+  </div>
+  <div class="col-sm-12">
+    <label for="email">E-mail</label>
+    <input formControlName="email" type="text" class="form-control" id="email" name="email">
+  </div>
+</form>
+<mat-dialog-actions>
+  <button mat-button (click)='addUser()'>Add</button>
+  <button mat-button (click)='close()'>Cancel</button>
+</mat-dialog-actions>
