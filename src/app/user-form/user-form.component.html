@@ -1,4 +1,5 @@
 <h1 mat-dialog-title class="text-center">Add User</h1>
+<div id ="error"></div>
 <form class='row col-sm-9 card-body mx-auto' [formGroup]="form">
   <div class="col-sm-12 ">
     <label for="firstName">Firstname</label>
@@ -13,7 +14,11 @@
     <input formControlName="email" type="text" class="form-control" id="email" name="email">
   </div>
 </form>
-<mat-dialog-actions>
+<mat-dialog-actions *ngIf="this.data == null; else elseBlock">
   <button mat-button (click)='addUser()'>Add</button>
   <button mat-button (click)='close()'>Cancel</button>
 </mat-dialog-actions>
+<ng-template #elseBlock>
+  <button mat-button (click)='modifyUser()'>Modify</button>
+  <button mat-button (click)='close()'>Cancel</button>
+</ng-template>

@@ -1,5 +1,7 @@
-<div>
-  <button class="btn btn-primary" (click)="displayForm()">Create new user</button>
+<app-header></app-header>
+<h2 class = "text-center">Welcome to user manager app !</h2>
+<div class ="text-center mt-4">
+  <button class="btn btn-primary text-center" (click)="displayForm()">Create new user</button>
 </div>
 <div class="ml-5 mr-5 row mt-5" *ngIf="users">
   <div class="col-md-4 mb-3" *ngFor="let user of users">
@@ -8,9 +10,9 @@
         <mat-card-title >{{user.lastName + " " + user.firstName}}</mat-card-title>
       </mat-card-header>
       <mat-card-content class ="text-center">{{user.email}}</mat-card-content>
-      <mat-card-content class ="btn-group">
-        <button class="btn btn-success mx-auto col-6" (click)="modifyUser(patient._id)">Modify user</button>
-        <button class="btn btn-danger col-6" (click)="removeUser(user.id)">Remove user</button>
+      <mat-card-content class ="btn-group" >
+        <button class="btn btn-success mx-auto col-6" (click)="modifyUser(user.id)">Modify user</button>
+        <button class="btn btn-danger col-6" (click)="displayModal(user.id)">Remove user</button>
       </mat-card-content>
     </mat-card>
   </div>

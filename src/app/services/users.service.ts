@@ -14,4 +14,14 @@ export class UsersService {
   removeUser(id) {
     return (this._http.delete<any>(this._routes + "users/" + id));
   }
+  addUser(user){
+    console.log(user)
+    return (this._http.post<any>(this._routes + "users",user));
+  }
+  getOneUser(id){
+    return (this._http.get<any>(this._routes + "users/" + id));
+  }
+  modifyUser(id,user){
+    return (this._http.put<any>(this._routes + "users/" + id,user));
+  }
 }

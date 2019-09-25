@@ -9,10 +9,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, } from '@angular/material/dialog';
+import {MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserFormComponent } from './user-form/user-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RemoveUserComponent } from './remove-user/remove-user.component';
+import {MatToolbarModule} from '@angular/material/toolbar'
 
 
 @NgModule({
@@ -21,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UsersComponent,
     HeaderComponent,
     UserFormComponent,
+    RemoveUserComponent,
     
   ],
   imports: [
@@ -34,10 +38,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule
   ],
-  entryComponents: [ UserFormComponent, ],
-  providers: [],
+  entryComponents: [
+     UserFormComponent, 
+     RemoveUserComponent,
+    ],
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

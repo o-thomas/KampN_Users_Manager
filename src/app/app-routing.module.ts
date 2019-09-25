@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'fiche-patient',
     component: UsersComponent,
   },
+  { path: '**',
+   component: UsersComponent,
+   },
+   
 ];
 
 @NgModule({
