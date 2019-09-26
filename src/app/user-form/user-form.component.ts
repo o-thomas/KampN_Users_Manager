@@ -32,7 +32,7 @@ export class UserFormComponent implements OnInit {
         this.user.lastName,
         [Validators.required]
       ),
-      email: new FormControl('', Validators.compose([
+      email: new FormControl( this.user.email, Validators.compose([
         Validators.required,
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
  ]))
